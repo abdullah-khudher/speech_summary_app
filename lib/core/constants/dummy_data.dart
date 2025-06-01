@@ -1,0 +1,3 @@
+const fakeText = """
+In recent years, the global interest in renewable energy sources has grown significantly due to increasing concerns over climate change, fossil fuel depletion, and environmental degradation. Solar power, wind energy, and hydroelectricity are now widely adopted as sustainable alternatives. Many governments have implemented policies and incentives to encourage both residential and industrial adoption of clean energy technologies. These shifts not only reduce greenhouse gas emissions but also contribute to long-term economic resilience by reducing dependence on volatile fuel markets.
+""";
