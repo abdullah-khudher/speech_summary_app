@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:speech_to_text/speech_to_text.dart';
+import '../../../../../core/constants/dummy_data.dart';
 import '../../../data/models/SummaryModel/SummaryModel.dart';
 import '../../../data/repos/home_repo.dart';
 import '../../../data/servieces/speech_service.dart';
@@ -14,58 +15,69 @@ class SummaryRowTextCubit extends Cubit<SummaryRowTextState> {
   final HomeRepo homeRepo;
   final SpeechService speechService;
 
+  String _currentTranscript = '';
 
-  String _recognizedText = '';
-
-  void updateRecognizedText(String text) {
-    _recognizedText = text;
-    emit(SummaryRowTextRecording(_recognizedText));
+  void fakeSummaryTest() async{
+    emit( const SummaryRowTextSuccess(SummaryModel(content: DummyData.fakeSummary),  DummyData.fakeText));
   }
 
-  Future<bool> requestMicPermission() async {
-    var status = await Permission.microphone.status;
 
-    if (status.isGranted || status.isProvisional) {
-      return true;
-    }
-    final newStatus = await Permission.microphone.request();
-    return newStatus.isGranted || newStatus.isProvisional;
-  }
-
+  /// Initializes mic recording flow and listens to speech.
   Future<void> startMicFlow() async {
-    final granted = await requestMicPermission();
+    final granted = await speechService.requestMicPermission();
     if (!granted) {
-      emit(const SummaryRowTextFailure("Microphone permission is required"));
+      if (await Permission.microphone.isPermanentlyDenied) {
+        openAppSettings();
+        emit(const SummaryRowTextFailure("Please enable microphone access from Settings."));
+      } else {
+        emit(const SummaryRowTextFailure("Microphone permission is required"));
+      }
       return;
     }
-
-    final available = await speechService.init();
-    if (!available) {
+    var asd = await speechService.init();
+    if (!asd) {
       emit(const SummaryRowTextFailure("Microphone is not available"));
       return;
     }
+    emit(const SummaryRowTextListening());
 
     speechService.listen((text) {
-      _recognizedText = text;
-      emit(SummaryRowTextRecording(_recognizedText));
+      if (kDebugMode) {
+        print("Recognized: $text");
+      }
+      _currentTranscript = text;
+      emit(SummaryRowTextRecording(_currentTranscript));
     });
   }
 
+  /// Stops the mic and sends text to summarization
   Future<void> stopAndSummarize() async {
-    speechService.stop();
-    emit(SummaryRowTextStopped());
-
-    await fetchSummary( rawText: _recognizedText);
+    await speechService.stop();
+    if (_currentTranscript.trim().isEmpty) {
+      emit(const SummaryRowTextFailure("Please speak before summarizing."));
+      return;
+    }
+    await fetchSummary( rawText: _currentTranscript);
   }
 
   Future<void> fetchSummary({required String rawText}) async {
-    emit(SummaryRowTextLoading());
+    emit(const SummaryRowTextLoading());
     var result = await homeRepo.fetchSummary(rawText: rawText);
     result.fold((failure) {
       emit(SummaryRowTextFailure(failure.errMessage));
     }, (summaryText) {
-      emit(SummaryRowTextSuccess(summaryText));
+      emit(SummaryRowTextSuccess(summaryText,_currentTranscript));
     });
   }
+  /// Cancels the recording and discards everything
+  Future<void> discardRecording() async {
+    _currentTranscript = '';
+
+    await speechService.cancel();
+
+    emit(const SummaryRowTextInitial());
+
+  }
+
 
 }

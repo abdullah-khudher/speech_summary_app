@@ -7,7 +7,14 @@ abstract class SummaryRowTextState extends Equatable {
 }
 
 // App just started / nothing happened yet
-class SummaryRowTextInitial extends SummaryRowTextState {}
+class SummaryRowTextInitial extends SummaryRowTextState {
+  const SummaryRowTextInitial();
+}
+
+// when start capturing text
+class SummaryRowTextListening extends SummaryRowTextState {
+  const SummaryRowTextListening();
+}
 
 // When mic is capturing text live
 class SummaryRowTextRecording extends SummaryRowTextState {
@@ -18,18 +25,19 @@ class SummaryRowTextRecording extends SummaryRowTextState {
   List<Object> get props => [text];
 }
 
-// Mic is stopped but not yet summarized
-class SummaryRowTextStopped extends SummaryRowTextState {}
-
 // While sending request to API
-class SummaryRowTextLoading extends SummaryRowTextState {}
+class SummaryRowTextLoading extends SummaryRowTextState {
+  const SummaryRowTextLoading();
+}
 
 // Summary result successfully received
 class SummaryRowTextSuccess extends SummaryRowTextState {
   final SummaryModel summaryText;
-  const SummaryRowTextSuccess(this.summaryText);
+  final String originalText;
+
+   const SummaryRowTextSuccess(this.summaryText, this.originalText);
   @override
-  List<Object> get props => [summaryText];
+  List<Object> get props => [summaryText,originalText];
 }
 
 // API or flow error
