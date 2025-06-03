@@ -2,7 +2,7 @@
 ![Flutter CI](https://github.com/abdullah-khudher/speech_summary_app/actions/workflows/flutter_ci.yml/badge.svg)
 
 🎙️Speech Summary is a Flutter application that transcribes live speech and uses OpenAI's GPT API to generate concise summaries.  
-Ideal for meetings, spontaneous ideas, or simplifying long speech into focused insights.
+Ideal for meetings, spontaneous ideas, or simplifying long speeches into focused insights.
 
 ![GitHub stars](https://img.shields.io/github/stars/abdullah-khudher/speech_summary_app)
 ![GitHub forks](https://img.shields.io/github/forks/abdullah-khudher/speech_summary_app)
@@ -13,10 +13,10 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Screenshots](#-demo-preview)
-- [Getting Started](#-getting-started)
 - [Fake Summary Mode](#-fake-summary-mode)
-- [TODOs](#-todos--future-improvements)
+- [Getting Started](#-getting-started)
 - [Tests](#-running-tests)
+- [TODOs](#-todos--future-improvements)
 - [Contributions](#-contributions)
 - [License](#-license)
 - [Author](#-author)
@@ -31,11 +31,11 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 - 🧪 Fake Summary mode for testing without API keys
 - 🧼 Clean Architecture with modular layers
 - 🌐 Built-in `.env` support for secure API key storage
-- 🧘 Ideal for meetings, lectures, spontaneous ideas, or simplifying long speech
+- 🧘 Ideal for meetings, lectures, spontaneous ideas, or simplifying long speeches
 
 ---
 
-## 🛠️ Tech Stack
+## 🧰 Tech Stack
 
 - **Flutter & Dart**
 - **BLoC** for state management
@@ -52,13 +52,20 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 
 ## 🎥 Demo Preview
 Below are short demos showcasing the app's core functionality and UI behavior.
+
 ### 🎙️ From Recording to Summary
 Watch how the app records live speech, then generates a smart summary using OpenAI.
-![Recording and Summarizing](screenshots/record_and_summarize.gif)
+
+<img src="screenshots/record_and_summarize.gif" width="250"/>
+
 
 ### 🧪 Fake Summary Mode
-Preview the app UI and test functionality without an API key.
-![Fake Summary](screenshots/fake_summary.gif)
+This mode allows you to demo the app without an API key.  
+Clicking **Test Fake Summary** will show a mock input and summary — ideal for UI tests or presentations.
+
+> This feature is also demonstrated in the demo preview below.
+<img src="screenshots/fake_summary.gif" width="250"/>
+
 
 ---
 
@@ -105,16 +112,6 @@ flutter run
 ```
 
 📱 **Note:** Use a real device to test microphone functionality.
-
----
-
-## 🧪 Fake Summary Mode
-
-If you want to preview the UI or demo the app without an API key:
-
-1. Click on **Test Fake Summary** button.
-2. It will generate a mock transcript and its corresponding summary, simulating real app behavior.
-3. Useful for demos or UI tests.
 
 ---
 
