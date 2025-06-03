@@ -1,8 +1,7 @@
-# Speech Summary  
+# 🧠 Speech Summary – Live Voice-to-Text Summarizer Powered by OpenAI
 ![Flutter CI](https://github.com/abdullah-khudher/speech_summary_app/actions/workflows/flutter_ci.yml/badge.svg)
-🎙️ A Flutter voice-to-summary app powered by OpenAI
 
-Speech Summary is a Flutter application that transcribes live speech and uses OpenAI's GPT API to generate concise summaries.  
+🎙️Speech Summary is a Flutter application that transcribes live speech and uses OpenAI's GPT API to generate concise summaries.  
 Ideal for meetings, spontaneous ideas, or simplifying long speech into focused insights.
 
 ![GitHub stars](https://img.shields.io/github/stars/abdullah-khudher/speech_summary_app)
@@ -13,7 +12,7 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 ## 📚 Table of Contents
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
-- [Screenshots](#-screenshots)
+- [Screenshots](#-demo-preview)
 - [Getting Started](#-getting-started)
 - [Fake Summary Mode](#-fake-summary-mode)
 - [TODOs](#-todos--future-improvements)
@@ -32,6 +31,7 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 - 🧪 Fake Summary mode for testing without API keys
 - 🧼 Clean Architecture with modular layers
 - 🌐 Built-in `.env` support for secure API key storage
+- 🧘 Ideal for meetings, lectures, spontaneous ideas, or simplifying long speech
 
 ---
 
@@ -50,17 +50,29 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 
 ---
 
-## 📸 Screenshots
+## 🎥 Demo Preview
+Below are short demos showcasing the app's core functionality and UI behavior.
+### 🎙️ From Recording to Summary
+Watch how the app records live speech, then generates a smart summary using OpenAI.
+![Recording and Summarizing](screenshots/record_and_summarize.gif)
 
-| Recording | Summary |
-|-----------|---------|
-
-[//]: # (| ![Recording]&#40;screenshots/recording.png&#41; | ![Summary]&#40;screenshots/summary.png&#41; |)
-
-> You can add your own screenshots inside a `/screenshots` folder and update these paths accordingly.
+### 🧪 Fake Summary Mode
+Preview the app UI and test functionality without an API key.
+![Fake Summary](screenshots/fake_summary.gif)
 
 ---
 
+## 🌐 Live Demo & CI/CD
+
+This project uses full CI/CD automation:
+
+- ✅ **CI**: Static code analysis and tests via [GitHub Actions](https://github.com/abdullah-khudher/speech_summary_app/actions/workflows/flutter_ci.yml)
+- 🚀 **CD**: Automatic deployment of the web version to GitHub Pages after every push to `main`
+
+👉 **Try the live web version here**:  
+[https://abdullah-khudher.github.io/speech_summary_app/](https://abdullah-khudher.github.io/speech_summary_app/)
+
+---
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -101,8 +113,29 @@ flutter run
 If you want to preview the UI or demo the app without an API key:
 
 1. Click on **Test Fake Summary** button.
-2. It will show a fake input text and its corresponding fake summary.
+2. It will generate a mock transcript and its corresponding summary, simulating real app behavior.
 3. Useful for demos or UI tests.
+
+---
+
+## 🧪 Running Tests
+
+The project includes comprehensive testing to ensure app stability:
+
+- ✅ **Unit & Widget Tests**  
+  Located under `/test/`  
+  Run using:
+```bash
+flutter test
+```
+
+- ✅ **Integration Tests**
+  Located under `/integration_test/` – these simulate full user flows.
+  Run using:
+```bash
+flutter test integration_test/
+```
+ℹ️ Integration tests may require a real device or emulator, and proper setup of the integration_test package.
 
 ---
 
@@ -117,15 +150,6 @@ If you want to preview the UI or demo the app without an API key:
 
 ---
 
-## 🧪 Running Tests
-
-Basic unit tests can be found in `/test/`. To run them:
-```bash
-flutter test
-```
-
----
-
 ## 🤝 Contributions
 
 Pull requests are welcome. For major changes, please open an issue first.
@@ -137,6 +161,11 @@ Pull requests are welcome. For major changes, please open an issue first.
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
+```markdown
+## 👨‍💻 Development Notes
+
+This project was fully designed, developed, and CI/CD-integrated by Abdullah Khudher as part of a hands-on portfolio to demonstrate expertise in clean architecture, AI integration, and production-grade Flutter tooling.
+```
 
 ## 🧠 Author
 
