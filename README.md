@@ -1,4 +1,5 @@
 # Speech Summary  
+![Flutter CI](https://github.com/abdullah-khudher/speech_summary_app/actions/workflows/flutter_ci.yml/badge.svg)
 🎙️ A Flutter voice-to-summary app powered by OpenAI
 
 Speech Summary is a Flutter application that transcribes live speech and uses OpenAI's GPT API to generate concise summaries.  
@@ -7,12 +8,12 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 ![GitHub stars](https://img.shields.io/github/stars/abdullah-khudher/speech_summary_app)
 ![GitHub forks](https://img.shields.io/github/forks/abdullah-khudher/speech_summary_app)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
 ---
 
 ## 📚 Table of Contents
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
+- [Screenshots](#-screenshots)
 - [Getting Started](#-getting-started)
 - [Fake Summary Mode](#-fake-summary-mode)
 - [TODOs](#-todos--future-improvements)
@@ -47,6 +48,16 @@ Ideal for meetings, spontaneous ideas, or simplifying long speech into focused i
 - **Dependency Injection** with `get_it`
 - **Functional programming** with `dartz`
 
+---
+
+## 📸 Screenshots
+
+| Recording | Summary |
+|-----------|---------|
+
+[//]: # (| ![Recording]&#40;screenshots/recording.png&#41; | ![Summary]&#40;screenshots/summary.png&#41; |)
+
+> You can add your own screenshots inside a `/screenshots` folder and update these paths accordingly.
 
 ---
 
