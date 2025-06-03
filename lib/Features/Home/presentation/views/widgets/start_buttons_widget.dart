@@ -23,7 +23,7 @@ class StopAndRetryButtons extends StatelessWidget {
                   await context.read<SummaryRowTextCubit>().stopAndSummarize();
                 },
               ),
-              const SizedBox(width: 16),
+              const SizedBox(height: 8),
               CustomButton(
                 label: 'Discard & Retry',
                 icon: Icons.restart_alt,

@@ -21,6 +21,7 @@ class StartAndTestButtons extends StatelessWidget {
                   context.read<SummaryRowTextCubit>().fakeSummaryTest();
                 },
               ),
+              const SizedBox(height: 8),
               CustomButton(
                 label: 'Start 🎙️',
                 icon: Icons.mic,
