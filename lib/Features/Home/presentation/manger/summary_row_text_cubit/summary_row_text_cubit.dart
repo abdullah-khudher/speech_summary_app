@@ -24,6 +24,7 @@ class SummaryRowTextCubit extends Cubit<SummaryRowTextState> {
 
   /// Initializes mic recording flow and listens to speech.
   Future<void> startMicFlow() async {
+    _currentTranscript = "";
     final granted = await speechService.requestMicPermission();
     if (!granted) {
       if (await Permission.microphone.isPermanentlyDenied) {
