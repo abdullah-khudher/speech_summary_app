@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'Features/Home/data/repos/home_repo.dart';
-import 'Features/Home/data/servieces/speech_service.dart';
+import 'Features/Home/data/services/speech_service.dart';
 import 'Features/Home/presentation/manger/summary_row_text_cubit/summary_row_text_cubit.dart';
 import 'Features/Home/presentation/views/home_view.dart';
 import 'core/utils/service_locator.dart';

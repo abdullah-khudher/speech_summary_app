@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/failures.dart';
 import '../../../../core/utils/api_service.dart';
-import '../models/SummaryModel/SummaryModel.dart';
+import '../models/summary_model/summary_model.dart';
 import 'home_repo.dart';
 
 class HomeRepoImpl implements HomeRepo {
@@ -21,7 +21,7 @@ class HomeRepoImpl implements HomeRepo {
 
       return right(summaryText);
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(
           ServerFailure.fromDioError(e),
         );

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../core/errors/failures.dart';
-import '../models/SummaryModel/SummaryModel.dart';
+import '../models/summary_model/summary_model.dart';
 
 abstract class HomeRepo {
   Future<Either<Failure, SummaryModel>> fetchSummary(

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
@@ -11,8 +12,8 @@ class SpeechService {
   /// Initializes speech recognition
   Future<bool> init() async {
     return await _speechToText.initialize(
-      onStatus: (status) => print("Speech Status: $status"),
-      onError: (error) => print("Speech Error: $error"),
+      onStatus: (status) => debugPrint("Speech Status: $status"),
+      onError: (error) => debugPrint("Speech Error: $error"),
     );
   }
 

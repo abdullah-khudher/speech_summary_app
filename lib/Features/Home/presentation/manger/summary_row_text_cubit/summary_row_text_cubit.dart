@@ -3,14 +3,14 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../../../../../core/constants/dummy_data.dart';
-import '../../../data/models/SummaryModel/SummaryModel.dart';
+import '../../../data/models/summary_model/summary_model.dart';
 import '../../../data/repos/home_repo.dart';
-import '../../../data/servieces/speech_service.dart';
+import '../../../data/services/speech_service.dart';
 
 part 'summary_row_text_state.dart';
 
 class SummaryRowTextCubit extends Cubit<SummaryRowTextState> {
-  SummaryRowTextCubit(this.homeRepo, this.speechService) : super(SummaryRowTextInitial());
+   SummaryRowTextCubit(this.homeRepo, this.speechService) : super(const SummaryRowTextInitial());
 
   final HomeRepo homeRepo;
   final SpeechService speechService;

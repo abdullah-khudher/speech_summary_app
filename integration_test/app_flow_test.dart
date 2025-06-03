@@ -18,7 +18,6 @@ void main() {
 
     // Wait to simulate recording (optional delay)
     await Future.delayed(const Duration(seconds: 2));
-    print('✅ Done tapping start');
     // Tap stop button (if visible)
     if (find.text('Finish & Get Summary').evaluate().isNotEmpty) {
       await tester.tap(find.text('Finish & Get Summary'));
