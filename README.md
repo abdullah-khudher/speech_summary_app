@@ -40,7 +40,6 @@ Ideal for meetings, spontaneous ideas, or simplifying long speeches into focused
 - **Flutter & Dart**
 - **BLoC** for state management
 - **Clean Architecture** pattern
-- **OpenAI GPT-3.5** via `dart_openai`
 - **Speech-to-Text** via `speech_to_text`
 - **Microphone permissions** via `permission_handler`
 - **HTTP networking** with `Dio`
@@ -56,7 +55,7 @@ Below are short demos showcasing the app's core functionality and UI behavior.
 ### 🎙️ From Recording to Summary
 Watch how the app records live speech, then generates a smart summary using OpenAI.
 
-<img src="screenshots/record_and_summarize.gif" width="250"/>
+<img src="screenshots/record_and_summarize.gif" width="250" alt="GIF showing real-time speech recording and summarization"/>
 
 
 ### 🧪 Fake Summary Mode
@@ -64,7 +63,8 @@ This mode allows you to demo the app without an API key.
 Clicking **Test Fake Summary** will show a mock input and summary — ideal for UI tests or presentations.
 
 > This feature is also demonstrated in the demo preview below.
-<img src="screenshots/fake_summary.gif" width="250"/>
+
+<img src="screenshots/fake_summary.gif" width="250" alt="GIF showing Fake Summary mode being triggered for demo or testing"/>
 
 
 ---
