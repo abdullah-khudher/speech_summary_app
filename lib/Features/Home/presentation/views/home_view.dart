@@ -3,8 +3,9 @@ import 'package:speech_summary/Features/Home/presentation/views/widgets/control_
 import 'package:speech_summary/Features/Home/presentation/views/widgets/recorded_text_widget.dart';
 import 'package:speech_summary/Features/Home/presentation/views/widgets/start_buttons_widget.dart';
 import 'package:speech_summary/Features/Home/presentation/views/widgets/summary_result_widget.dart';
-import '../manger/summary_row_text_cubit/summary_row_text_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../viewmodels/summary_row_text/summary_row_text_cubit.dart';
 
 class HomeView extends StatelessWidget {
    const HomeView({super.key});

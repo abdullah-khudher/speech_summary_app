@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../manger/summary_row_text_cubit/summary_row_text_cubit.dart';
+import '../../viewmodels/summary_row_text/summary_row_text_cubit.dart';
 import 'custom_button_widget.dart';
 
 

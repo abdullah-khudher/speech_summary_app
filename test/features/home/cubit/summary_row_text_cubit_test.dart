@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:speech_summary/Features/Home/data/repos/home_repo.dart';
 import 'package:speech_summary/Features/Home/data/services/speech_service.dart';
-import 'package:speech_summary/Features/Home/presentation/manger/summary_row_text_cubit/summary_row_text_cubit.dart';
+import 'package:speech_summary/Features/Home/presentation/viewmodels/summary_row_text/summary_row_text_cubit.dart';
 
 class MockHomeRepo extends Mock implements HomeRepo {}
 class MockSpeechService extends Mock implements SpeechService {}
